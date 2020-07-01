@@ -15,6 +15,26 @@ $perculus = new phpPerculus();
 echo $perculus->accessToken;
 echo $perculus->tokenErrorCode;
 echo $perculus->tokenErrorDescription;
+
+
+
+if ( $perculus->accessToken <> '' )
+{
+    // Create a virtual classroom - Sanal sınıf oluştur.
+    $perculus->createClassroom("CHEMISTRY LESSON", "ENGINEERING FACULTY", "2020-06-28T23:00:00", "80", "ENGINEERING FACULTY");
+    echo $perculus->classroomID;
+    echo $perculus->classroomErrorCode;
+    echo $perculus->classroomErrorDescription;
+    
+    if ( $perculus->classroomID <> '' )
+    {
+       $perculus->addParticipant($perculus->classroomID,"ayhan","AYHAN","ÖZDEMİR","ayhan@cumhuriyet.edu.tr","a","505xxxxxxx");
+       echo $perculus->participantID."<br>";
+       echo $perculus->participantErrorCode."<br>";
+       echo $perculus->participantErrorDescription."<br>";
+    }
+}
+
 ?&gt
 </tt>
 </code>
