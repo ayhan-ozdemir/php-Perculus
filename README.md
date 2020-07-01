@@ -5,17 +5,17 @@ Bu sınıf, PERCULUS API'sinin kullanımını basitleştiren PHP tabanlı işlev
 <pre>
 <code>
 <tt>
-<?php
+&lt;?php
 include "classPerculus.php"
 // Get a token from perculus system
 // If there is no error, a value occurs in the accessToken variable. If there is an error, no value is generated.
 // Perculus sisteminden jeton al
 // Hata yoksa, accessToken değişkeninde bir değer oluşur. Bir hata varsa, hiçbir değer üretilmez.
 $perculus = new phpPerculus();
-echo $perculus->accessToken."<br>";
-echo $perculus->tokenErrorCode."<br>";
-echo $perculus->tokenErrorDescription."<br>";
-?>
+echo $perculus->accessToken;
+echo $perculus->tokenErrorCode;
+echo $perculus->tokenErrorDescription;
+?&gt
 </tt>
 </code>
 </pre>
