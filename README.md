@@ -2,6 +2,7 @@
 This class includes PHP-based functions that simplify the use of the PERCULUS API.<br>
 Bu sınıf, PERCULUS API'sinin kullanımını basitleştiren PHP tabanlı işlevler içerir.<br><br>
 <b>Example - Örnek</b><br>
+<pre>
 <code>
 \<\?php
 // Get a token from perculus system
@@ -14,3 +15,4 @@ echo $perculus->tokenErrorCode."<br>";
 echo $perculus->tokenErrorDescription."<br>";
 \?\>
 </code>
+</pre>
