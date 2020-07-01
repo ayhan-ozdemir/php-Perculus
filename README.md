@@ -4,7 +4,9 @@ Bu sınıf, PERCULUS API'sinin kullanımını basitleştiren PHP tabanlı işlev
 <b>Example - Örnek</b><br>
 <pre>
 <code>
-<?php
+<tt>
+<\?php
+include "classPerculus.php"
 // Get a token from perculus system
 // If there is no error, a value occurs in the accessToken variable. If there is an error, no value is generated.
 // Perculus sisteminden jeton al
@@ -13,6 +15,7 @@ $perculus = new phpPerculus();
 echo $perculus->accessToken."<br>";
 echo $perculus->tokenErrorCode."<br>";
 echo $perculus->tokenErrorDescription."<br>";
-?>
+\?>
+</tt>
 </code>
 </pre>
