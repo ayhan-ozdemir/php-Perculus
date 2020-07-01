@@ -16,8 +16,6 @@ echo $perculus->accessToken;
 echo $perculus->tokenErrorCode;
 echo $perculus->tokenErrorDescription;
 
-
-
 if ( $perculus->accessToken <> '' )
 {
     // Create a virtual classroom - Sanal sınıf oluştur.
@@ -28,13 +26,13 @@ if ( $perculus->accessToken <> '' )
     
     if ( $perculus->classroomID <> '' )
     {
+       // Add a participant - Katılımcı ekle.
        $perculus->addParticipant($perculus->classroomID,"ayhan","AYHAN","ÖZDEMİR","ayhan@cumhuriyet.edu.tr","a","505xxxxxxx");
-       echo $perculus->participantID."<br>";
-       echo $perculus->participantErrorCode."<br>";
-       echo $perculus->participantErrorDescription."<br>";
+       echo $perculus->participantID;
+       echo $perculus->participantErrorCode;
+       echo $perculus->participantErrorDescription;
     }
 }
-
 ?&gt
 </tt>
 </code>
