@@ -15,6 +15,7 @@ $perculus = new phpPerculus();
 echo $perculus->accessToken."<br>";
 echo $perculus->tokenErrorCode."<br>";
 echo $perculus->tokenErrorDescription."<br>";
+?>
 </code>
 </pre>
 </div>
