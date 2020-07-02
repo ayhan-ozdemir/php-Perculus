@@ -18,41 +18,41 @@ class phpPerculus
 	* Perculus, Advancity tarafından geliştirilen bir sanal sınıf sistemidir.
 	*	
 	* CLASS FEATURES
-    * 1. Create a virtual classroom
-    *    createClassroom($classroomName, $description, $startDate, $duration, $tags)
-    * 2. Update the created virtual classroom information.
-    *    updateClassroom($classroomID, $classroomName, $description, $startDate, $duration, $tags)
-    * 3. Delete the virtual classroom.
-    *    ddeleteClassroom($classroomID)
-    * 4. Add participants to the virtual classroom.
-    *    addParticipant($classroomID, $userID, $name, $surname, $email, $role, $mobile)
-    * 5. Delete participant from the virtual classroom.
-    *    deleteParticipant($classroomID, $participantID)
+	* 1. Create a virtual classroom
+	*    createClassroom($classroomName, $description, $startDate, $duration, $tags)
+	* 2. Update the created virtual classroom information.
+	*    updateClassroom($classroomID, $classroomName, $description, $startDate, $duration, $tags)
+	* 3. Delete the virtual classroom.
+	*    ddeleteClassroom($classroomID)
+	* 4. Add participants to the virtual classroom.
+	*    addParticipant($classroomID, $userID, $name, $surname, $email, $role, $mobile)
+	* 5. Delete participant from the virtual classroom.
+	*    deleteParticipant($classroomID, $participantID)
 	* 
 	* SINIF ÖZELLİKLERİ
 	* 1. Sanal sınıf oluşturun.
-    *    createClassroom($classroomName, $description, $startDate, $duration, $tags)
-    * 2. Oluşturulan sanal sınıf bilgilerini güncelleyin.
-    *    updateClassroom($classroomID, $classroomName, $description, $startDate, $duration, $tags)
-    * 3. Sanal sınıfı silin.
-    *    deleteClassroom($classroomID)
-    * 4. Sanal sınıfa katılımcı ekleyin.
-    *    addParticipant($classroomID, $userID, $name, $surname, $email, $role, $mobile)
-    * 5. Sanal sınıftaki katılımcıyı silin.
-    *    deleteParticipant($classroomID, $participantID)
+	*    createClassroom($classroomName, $description, $startDate, $duration, $tags)
+	* 2. Oluşturulan sanal sınıf bilgilerini güncelleyin.
+	*    updateClassroom($classroomID, $classroomName, $description, $startDate, $duration, $tags)
+	* 3. Sanal sınıfı silin.
+	*    deleteClassroom($classroomID)
+	* 4. Sanal sınıfa katılımcı ekleyin.
+	*    addParticipant($classroomID, $userID, $name, $surname, $email, $role, $mobile)
+	* 5. Sanal sınıftaki katılımcıyı silin.
+	*    deleteParticipant($classroomID, $participantID)
 	*
 	* RESOURCES - KAYNAKLAR
-    * Perculus Plus SDK: https://github.com/advancity/perculus-plus-sdk
-    * Perculus Plus API: https://perculus-v3.almscloud.com/xapi/swagger/index.html
+	* Perculus Plus SDK: https://github.com/advancity/perculus-plus-sdk
+	* Perculus Plus API: https://perculus-v3.almscloud.com/xapi/swagger/index.html
 	* Perculus Plus API: https://plus.perculus.com/xapi/swagger/index.html
 	*
 	**/
 
 
-    /**
+	/*
 	API_USER_NAME, API_PASSWORD and API_ACCOUNT_ID must be taken from Advancity Company.
 	API_USER_NAME, API_PASSWORD ve API_ACCOUNT Advancity firmasından alınmalıdır.
-	**/
+	*/
 	const API_USER_NAME = '****';
 	const API_PASSWORD = '****';
 	const API_ACCOUNT_ID = '*****';
@@ -77,10 +77,10 @@ class phpPerculus
 	{
 		// Get a token from perculus system - Perculus sisteminen jeton al 
 		$params = array('username' => self::API_USER_NAME,
-						'password' => self::API_PASSWORD,
-						'account_id' => self::API_ACCOUNT_ID,
-						'client_id' => 'api',
-						'grant_type' => 'password');
+				'password' => self::API_PASSWORD,
+				'account_id' => self::API_ACCOUNT_ID,
+				'client_id' => 'api',
+				'grant_type' => 'password');
 		$paramString = http_build_query($params);
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, self::API_TOKEN_URL);
@@ -120,44 +120,44 @@ class phpPerculus
 		Virtual classroom creation model - Sanal sınıf oluşturma modeli (JSON format)
 		{
   			"session_id"		: "string",
-  			"name"				: "string",
+  			"name"			: "string",
   			"description"		: "string",
-  			"tags"				: "string",
+  			"tags"			: "string",
   			"start_date"		: "2020-01-18T21:20:46.430Z",
-  			"duration"			: 0,
-  			"lang"				: "string",
-  			"options"			: 
+  			"duration"		: 0,
+  			"lang"			: "string",
+  			"options"		: 
 			{
-    			"syscheck_on_startup"	: true,
-    			"allow_rating"			: true,
-    			"preparation_time"		: 0,
-    			"chat"					: 
+    				"syscheck_on_startup"	: true,
+    				"allow_rating"		: true,
+    				"preparation_time"	: 0,
+    				"chat"			: 
 				{
-      				"offMessageModule"			: false,
-      				"offGeneralMsging"			: false,
-      				"offGeneralMsgLimitForUser"	: false,
-      				"offSpecialMsging"			: false,
-      				"offSpecialMsgToAdmin"		: false,
-      				"offSpecialMsgToUser"		: false,
-      				"offNewMsgSound"			: false,
-      				"offClearForReplay"			: false,
-      				"onNewMsgSoundInAll"		: false,
-      				"onNewMsgNotifyInAll"		: false
-    			},
-    			"duration"				: 
+      					"offMessageModule"		: false,
+      					"offGeneralMsging"		: false,
+      					"offGeneralMsgLimitForUser"	: false,
+      					"offSpecialMsging"		: false,
+      					"offSpecialMsgToAdmin"		: false,
+      					"offSpecialMsgToUser"		: false,
+      					"offNewMsgSound"		: false,
+      					"offClearForReplay"		: false,
+      					"onNewMsgSoundInAll"		: false,
+      					"onNewMsgNotifyInAll"		: false
+    				},
+				"duration"		: 
 				{
-      					"allowExtendTime"		: true,
-     					"useRemainingTime"		: false
-    			}
+					"allowExtendTime"		: true,
+					"useRemainingTime"		: false
+    				}
   			}
 		}
 		*/
 		$params = array ('name' => $classroomName,
-					  	 'description' => $description,
-					  	 'tags' => $tags,
-					  	 'start_date' => $startDate,
-					  	 'duration' => $duration,
-					  	 'lang' => self::API_LANG);
+				 'description' => $description,
+				 'tags' => $tags,
+				 'start_date' => $startDate,
+				 'duration' => $duration,
+				 'lang' => self::API_LANG);
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, self::API_SESSION_URL);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -172,8 +172,8 @@ class phpPerculus
 		curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($params));
 		curl_setopt($curl, CURLOPT_HEADER, FALSE);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array("Accept: application/json",
-													 "Content-Type: application/json",
-													 "Authorization: Bearer ".$this->accessToken));
+							     "Content-Type: application/json",
+							     "Authorization: Bearer ".$this->accessToken));
 		$response = curl_exec($curl);
 		curl_close($curl);
 		$json = json_decode($response, true);
@@ -200,44 +200,44 @@ class phpPerculus
 		Virtual classroom update model - Sanal sınıf güncelleme modeli (JSON format)
 		{
   			"session_id"		: "string",
-  			"name"				: "string",
+  			"name"			: "string",
   			"description"		: "string",
-  			"tags"				: "string",
+  			"tags"			: "string",
   			"start_date"		: "2020-01-18T21:20:46.430Z",
-  			"duration"			: 0,
-  			"lang"				: "string",
-  			"options"			: 
+  			"duration"		: 0,
+  			"lang"			: "string",
+  			"options"		: 
 			{
-    			"syscheck_on_startup"	: true,
-    			"allow_rating"			: true,
-    			"preparation_time"		: 0,
-    			"chat"					: 
+				"syscheck_on_startup"	: true,
+				"allow_rating"		: true,
+				"preparation_time"	: 0,
+				"chat"			: 
 				{
-      				"offMessageModule"			: false,
-      				"offGeneralMsging"			: false,
-      				"offGeneralMsgLimitForUser"	: false,
-      				"offSpecialMsging"			: false,
-      				"offSpecialMsgToAdmin"		: false,
-      				"offSpecialMsgToUser"		: false,
-      				"offNewMsgSound"			: false,
-      				"offClearForReplay"			: false,
-      				"onNewMsgSoundInAll"		: false,
-      				"onNewMsgNotifyInAll"		: false
-    			},
-    			"duration"				: 
+					"offMessageModule"		: false,
+					"offGeneralMsging"		: false,
+					"offGeneralMsgLimitForUser"	: false,
+					"offSpecialMsging"		: false,
+					"offSpecialMsgToAdmin"		: false,
+					"offSpecialMsgToUser"		: false,
+					"offNewMsgSound"		: false,
+					"offClearForReplay"		: false,
+					"onNewMsgSoundInAll"		: false,
+					"onNewMsgNotifyInAll"		: false
+				},
+    				"duration"		: 
 				{
-      					"allowExtendTime"		: true,
-     					"useRemainingTime"		: false
-    			}
-  			}
+	      				"allowExtendTime"	: true,
+	     				"useRemainingTime"	: false
+	    			}
+	  		}
 		}
 		*/
 		$params = array ('name' => $classroomName,
-					  	 'description' => $description,
-					  	 'tags' => $tags,
-					  	 'start_date' => $startDate,
-					  	 'duration' => $duration,
-					  	 'lang' => self::API_LANG);
+				 'description' => $description,
+				 'tags' => $tags,
+				 'start_date' => $startDate,
+				 'duration' => $duration,
+				 'lang' => self::API_LANG);
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, self::API_SESSION_URL.'/'.$classroomID);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -252,8 +252,8 @@ class phpPerculus
 		curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($params));
 		curl_setopt($curl, CURLOPT_HEADER, FALSE);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array("Accept: application/json",
-													 "Content-Type: application/json",
-													 "Authorization: Bearer ".$this->accessToken));
+							     "Content-Type: application/json",
+							     "Authorization: Bearer ".$this->accessToken));
 		$response = curl_exec($curl);
 		curl_close($curl);
 		$json = json_decode($response, true);
@@ -289,8 +289,8 @@ class phpPerculus
 		curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
 		curl_setopt($curl, CURLOPT_HEADER, FALSE);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array("Accept: application/json",
-													 "Content-Type: application/json",
-													 "Authorization: Bearer ".$this->accessToken));
+							     "Content-Type: application/json",
+							     "Authorization: Bearer ".$this->accessToken));
 		$response = curl_exec($curl);
 		curl_close($curl);
 		$json = json_decode($response, true);
@@ -312,17 +312,17 @@ class phpPerculus
 
 	public function addParticipant($classroomID, $userID, $name, $surname, $email, $role, $mobile)
 	{
-	    /* 
+		/* 
 		Add a participant - Katılımcı ekle.
 		Add participant data model - Katılımcı ekleme veri modeli (JSON format)
 		{
-    		"user_id"		: "string",
-    		"name"			: "string",
+    			"user_id"		: "string",
+	    		"name"			: "string",
    			"surname"		: "string",
-    		"email"			: "string",
-    		"role"			: "string",
-    		"mobile"		: "string",
-    		"avatar"		: "string"
+	    		"email"			: "string",
+	    		"role"			: "string",
+	    		"mobile"		: "string",
+	    		"avatar"		: "string"
   		}
 
 		Descriptions for role field - Rol alanı için açıklamalar
@@ -330,7 +330,7 @@ class phpPerculus
 		e: Teacher - Eğitmen
 		e-: Restricted Teacher (Can't see shared files) - Kısıtlı Eğitmen (Paylaşılan dosyaları göremez)
 		u: Standard Participant - Standart Katılımcı (öğrenci ya da yetkisiz kullanıcı denebilir)
-	    */
+		*/
 		$params = array ('user_id'=>$userID,
 						 'name'=>$name,
 						 'surname'=>$surname,
